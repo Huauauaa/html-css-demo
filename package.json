@@ -1,0 +1,25 @@
+{
+  "name": "html-css-demo",
+  "version": "1.0.0",
+  "description": "css sass less",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch styles/scss:styles/css --no-source-map",
+    "start": "npm run sass | http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huauauaa/html-css-demo.git"
+  },
+  "keywords": [],
+  "author": "Harvey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Huauauaa/html-css-demo/issues"
+  },
+  "homepage": "https://github.com/Huauauaa/html-css-demo#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/preset-env": "^7.8.3"
+  }
+}
