@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like</title>
+    <style>
+      .praise-bubble {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #f4f4f4;
+      }
+      .bubble {
+        position: absolute;
+        bottom: 0;
+        background-image: url('./assets/heart.png');
+        width: 80px;
+        height: 80px;
+      }
+      .b1 {
+        animation: bubble-y 2.5s linear 1 forwards,
+          bubble-x 2.5s linear 1 forwards, bubble-size 2.5s linear 1 forwards;
+      }
+      .b2 {
+        animation: bubble-y 3s linear 1 forwards, bubble-x 3s linear 1 forwards,
+          bubble-size 3s linear 1 forwards;
+      }
+      .b3 {
+        animation: bubble-y 3.5s linear 1 forwards,
+          bubble-x 3.5s linear 1 forwards, bubble-size 3.5s linear 1 forwards;
+      }
+      .b4 {
+        animation: bubble-y 4s linear 1 forwards, bubble-x 4s linear 1 forwards,
+          bubble-size 4s linear 1 forwards;
+      }
+      .b5 {
+        animation: bubble-y 4.5s linear 1 forwards,
+          bubble-x 4.5s linear 1 forwards, bubble-size 4.5s linear 1 forwards;
+      }
+      .b6 {
+        animation: bubble-y 5s linear 1 forwards, bubble-x 5s linear 1 forwards,
+          bubble-size 5s linear 1 forwards;
+      }
+      @keyframes bubble-y {
+        0% {
+          margin-bottom: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          margin-bottom: 100vh;
+          opacity: 0;
+        }
+      }
+
+      @keyframes bubble-size {
+        0% {
+          transform: scale(0.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes bubble-x {
+        0% {
+        }
+        25% {
+          margin-left: -5vw;
+        }
+        50% {
+          margin-left: 5vw;
+        }
+        75% {
+          margin-left: -10vw;
+        }
+        100% {
+          margin-left: 10vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="praise-bubble">
+      <div src="./assets/heart.png" alt="like" class="bubble b1 bl1" />
+    </div>
+    <script>
+      const praiseBubble = document.querySelector('.praise-bubble');
+      let last = 0;
+      function addPraise() {
+        const b = Math.floor(Math.random() * 6) + 1;
+        const d = document.createElement('div');
+        d.className = `bubble b${b}`;
+        d.dataset.t = String(Date.now());
+        praiseBubble.appendChild(d);
+      }
+      function removeChild() {
+        const firstChild = praiseBubble.firstChild;
+        if (praiseBubble.firstChild) {
+          praiseBubble.removeChild(firstChild);
+        }
+      }
+      setInterval(() => {
+        addPraise();
+        removeChild();
+      }, 300);
+    </script>
+  </body>
+</html>
