@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    .canvas-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    canvas {
+      background-color: transparent;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas-wrapper">
+    <canvas id="canvas" width="600" height="800"></canvas>
+  </div>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const points = [[10, 10], [30, 100], [20, 150], [100, 200], [400, 40]];
+    for (let i = 0; i < points.length; i += 1) {
+      const point = points[i];
+      if (i + 1 < points.length) {
+        const nextPoint = points[i + 1];
+        ctx.beginPath();
+        ctx.strokeStyle = '#1665d8';
+        ctx.moveTo(...point);
+        ctx.lineTo(...nextPoint);
+        ctx.closePath();
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      ctx.fillStyle = '#1665d8';
+      ctx.arc(...point, 10, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.closePath();
+      ctx.fillStyle = '#fff';
+      ctx.fillText((i + 1).toString(), point[0] - 2, point[1] + 2);
+    }
+  </script>
+</body>
+
+</html>
