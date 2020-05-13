@@ -1,0 +1,13 @@
+@mixin content-level($level) {
+  .level-#{$level} {
+    text-indent: 10 * $level + 'px';
+  }
+}
+
+.editable-content {
+  @include content-level(1);
+  @include content-level(2);
+  @include content-level(3);
+  @include content-level(4);
+  @include content-level(5);
+}
