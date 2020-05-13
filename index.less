@@ -1,0 +1,24 @@
+@title: 'a';
+// @title: '';
+
+// #title {
+//   & when (@title = '') {
+//     display: none;
+//   }
+
+//   span::after {
+//     content: @title;
+//   }
+// }
+
+#label() {
+  span::after {
+        content: @title;
+      }
+}
+#hide() {
+  display: none;
+}
+#title() {
+  // if(@title, #label(), #hide())
+}

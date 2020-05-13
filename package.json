@@ -1,0 +1,23 @@
+{
+  "name": "html-css-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lessc index.less index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huauauaa/html-css-demo.git"
+  },
+  "keywords": [],
+  "author": "Harvey <harvey0379@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Huauauaa/html-css-demo/issues"
+  },
+  "homepage": "https://github.com/Huauauaa/html-css-demo#readme",
+  "dependencies": {
+    "less": "^3.11.1"
+  }
+}
