@@ -1,0 +1,22 @@
+@mixin content-level($level) {
+  &.level-#{$level} {
+    &::before {
+      content: '#{$level}';
+      position: relative;
+      display: inline-block;
+      background-color: red;
+      color: #fff;
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      text-align: center;
+      line-height: 18px;
+    }
+  }
+}
+
+.content {
+  @for $i from 1 through 10 {
+    @include content-level($i);
+  }
+}
