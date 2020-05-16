@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Columns float</title>
+</head>
+<style>
+  /* 利用浮动的方式，左右两栏设置固定大小，并设置对应方向的浮动。中间一栏设置左右两个方向的margin值，注意这种方式，中间一栏必须放到最后。 */
+  .outer {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .left {
+    float: left;
+    width: 100px;
+    height: 100%;
+    background-color: antiquewhite;
+  }
+
+  .center {
+    margin: 0 100px;
+    height: 100%;
+    background-color: aqua;
+  }
+
+  .right {
+    float: right;
+    width: 100px;
+    height: 100%;
+    background-color: brown;
+  }
+</style>
+
+<body>
+  <div class="outer">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center"></div>
+  </div>
+</body>
+
+</html>
