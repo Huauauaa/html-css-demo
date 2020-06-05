@@ -1,0 +1,3 @@
+CACHE MANIFEST  #v01 /image/01.jpg /image/02.jpg
+NETWORK: #v01 /image/01.jpg /image/02.jpg
+FALLBACK: /
