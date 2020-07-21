@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .double-line {
+      border-top: 1px dashed #000;
+      border-bottom: 1px dashed #000;
+      height: 2px;
+    }
+
+    .test {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+
+    .test::before {
+      content: 'A';
+      height: 10px;
+      width: 20px;
+    }
+  </style>
 </head>
+
 <body>
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi tempora illum minus earum eveniet, placeat nemo pariatur facere, eos rem, cupiditate ut libero corrupti ipsam? Blanditiis officia cupiditate eveniet soluta.
-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores assumenda consequatur cupiditate, debitis deserunt doloremque est, hic incidunt libero maiores, natus necessitatibus odit officiis possimus quaerat sit temporibus unde.
-
-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi autem consequuntur dicta doloremque doloribus ex exercitationem incidunt inventore laboriosam maiores minus, optio quisquam, repudiandae rerum temporibus voluptatum! Ex, veniam?
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti, quae quasi similique sunt voluptas! Ab asperiores consectetur delectus esse explicabo laborum pariatur praesentium? Atque consequatur nihil quidem temporibus vero!
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse excepturi explicabo minima nemo sed sequi similique tempora ullam unde! Aliquid consequatur, delectus dolor eligendi facilis quaerat ratione? Eveniet, exercitationem.
-  
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, iure!
+  <div class="double-line">
+  </div>
+  <br>
+  <br>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, iure!
+  <div class="double-line">
+  </div>
+  <br>
+  <br>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, iure!
+  <div class="double-line">
+  </div>
+  <div class="test">
+    11
+  </div>
+  <script>
+    const testDOM = document.querySelector('.test');
+    const beforeDOM = getComputedStyle(testDOM, '::before');
+    console.log(beforeDOM.width)
+  </script>
 </body>
+
 </html>
