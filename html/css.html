@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Demo</title>
+    <style>
+      .out div {
+        color: gray;
+      }
+      .out > span {
+        border: 1px solid saddlebrown;
+      }
+      .text ~ span {
+        background-color: bisque;
+      }
+      .text + span {
+        font-size: 20px;
+      }
+
+      * {
+        font-style: italic;
+      }
+      div::first-letter {
+        text-transform: uppercase;
+        font-size: 130%;
+      }
+      div::first-line {
+        font-weight: bold;
+      }
+      .text::before {
+        content: '→';
+      }
+      .text::after{
+        content: '...';
+      }
+      div::after {
+        content: '。';
+      }
+      .foo-a {
+        text-decoration: dotted;
+      }
+
+      .foo-a:link {
+        color: bisque;
+      }
+      .foo-a:visited {
+        text-decoration: line-through;
+      }
+      .foo-a:hover {
+        color: hotpink;
+        text-decoration: underline;
+      }
+      .foo-a:active {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.baidu.com" class="foo-a" target="_blank">This is a link</a>
+    <div class="out">
+      Lorem, ipsum dolor. <br />
+      Lorem ipsum, dolor sit amet consectetur <br />adipisicing elit. Sit,
+      accusantium?
+      <span>span</span>
+      <div class="bar">
+        bar
+        <span class="text">Lorem ipsum dolor sit amet.</span>
+        <span>Lorem, ipsum dolor.</span>
+        <span>Lorem, ipsum dolor.</span>
+      </div>
+      <div class="foo"><span class="text">Lorem ipsum dolor sit.</span></div>
+    </div>
+    <div class="out">
+      another
+    </div>
+  </body>
+</html>
