@@ -1,4 +1,3 @@
 # html-css-demo
 
-`lorem + enter`
-generate some text
+[html](./html/README.md)
