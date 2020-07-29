@@ -1,0 +1,122 @@
+.content.level-1::before {
+  content: "1";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-2::before {
+  content: "2";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-3::before {
+  content: "3";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-4::before {
+  content: "4";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-5::before {
+  content: "5";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-6::before {
+  content: "6";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-7::before {
+  content: "7";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-8::before {
+  content: "8";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-9::before {
+  content: "9";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+.content.level-10::before {
+  content: "10";
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+}
+
+/*# sourceMappingURL=test.css.map */

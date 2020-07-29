@@ -1,0 +1,24 @@
+// @for $i from 1 through 3 {
+//   .item-#{$i} { width: 2em * $i; }
+// }
+$green: #0f0;
+@mixin type-badge($type) {
+  &::after {
+    content: $type;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    color: red;
+  }
+}
+@mixin element-type-badge($type) {
+  .element-type-badge-#{$type} {
+    &.active {
+      border: 1px solid $green;
+      @include type-badge($type);
+    }
+  }
+}
+@include element-type-badge('A');

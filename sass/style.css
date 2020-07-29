@@ -1,0 +1,14 @@
+.element-type-badge-A.active {
+  border: 1px solid #0f0;
+}
+.element-type-badge-A.active::after {
+  content: "A";
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-color: transparent;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

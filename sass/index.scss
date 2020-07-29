@@ -1,0 +1,38 @@
+@import "colors";
+@import "color";
+
+@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+
+
+.foo {
+  font-size: 10px;
+  &-header {
+    @include large-text;
+    color: $red;
+    margin: {
+      left: 10px;
+      right: 20px;
+    }
+  }
+  &-main {
+    @include large-text;
+    text-align: center;
+    color: $green;
+    .title {
+      width: 100%;
+    }
+    .table-title {
+      @extend .title;
+      padding: 0;
+    }
+  }
+}
+// this is a comment
+/* comment 2 */
