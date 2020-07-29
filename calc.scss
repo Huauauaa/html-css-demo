@@ -1,0 +1,8 @@
+$all: 100%;
+$rightWidth: 20px;
+
+.foo {
+  --height: 10px;
+  width: calc(#{$all} - #{$rightWidth});
+  height: var(--height);
+}
