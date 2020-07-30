@@ -1,0 +1,20 @@
+{
+  "name": "html-css-demo",
+  "version": "1.0.0",
+  "description": "- [sass](./sass/README.md) - [css](./css/README.md) - [html](./html/README.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huauauaa/html-css-demo.git"
+  },
+  "keywords": [],
+  "author": "Harvey <harvey0379@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Huauauaa/html-css-demo/issues"
+  },
+  "homepage": "https://github.com/Huauauaa/html-css-demo#readme"
+}
