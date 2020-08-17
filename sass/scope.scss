@@ -1,0 +1,16 @@
+$color: yellow;
+
+@mixin p-mixin($c) {
+  p {
+    color: $c;
+  }
+}
+
+.foo {
+  $color: red;
+  @include p-mixin($color);
+}
+.bar {
+  $color: blue;
+  @include p-mixin($color);
+}
