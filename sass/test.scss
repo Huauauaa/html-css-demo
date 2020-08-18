@@ -20,3 +20,11 @@
     @include content-level($i);
   }
 }
+
+.foo {
+  opacity: .3;
+}
+
+.bar {
+  opacity: 30%;
+}

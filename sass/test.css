@@ -119,4 +119,12 @@
   line-height: 18px;
 }
 
+.foo {
+  opacity: 0.3;
+}
+
+.bar {
+  opacity: 30%;
+}
+
 /*# sourceMappingURL=test.css.map */
