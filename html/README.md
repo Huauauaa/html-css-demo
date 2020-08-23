@@ -2,5 +2,3 @@
 
 `lorem + enter`
 generate some text
-
-
