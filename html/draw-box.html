@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes activeStroke {
+      to {
+        stroke-dashoffset: 11;
+      }
+    }
+
+    .widget-border {
+      animation: activeStroke 0.75s linear infinite;
+      stroke-dasharray: 8 3;
+    }
+  </style>
+</head>
+
+<body>
+  <svg version="1.1" baseProfile="full" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg">
+    <rect id="box" class="widget-border" stroke="blue" fill="transparent"></rect>
+  </svg>
+
+  <script>
+    document.addEventListener('mousedown', onmousedown)
+    document.addEventListener('mousemove', onmousemove)
+    document.addEventListener('mouseup', onmouseup)
+
+    let rect = document.getElementById('box')
+    document.querySelector('svg').appendChild(rect)
+    let startX;
+    let startY;
+
+    function onmousedown(e) {
+      console.log('onmousedown', e)
+
+      rect.setAttribute('id', 'box')
+
+      startX = e.x
+      startY = e.y
+      rect.setAttribute('x', e.x)
+      rect.setAttribute('y', e.y)
+      // rect.setAttribute('fill', 'red')
+
+    }
+
+    function onmousemove(e) {
+      console.log(rect.getAttribute('x'))
+      if (rect.getAttribute('x') !== 'null') {
+        console.log('a')
+        rect.setAttribute('width', e.x - startX)
+        rect.setAttribute('height', e.y - startY)
+      }
+
+    }
+
+    function onmouseup() {
+      const rect = document.getElementById('box');
+      rect.setAttribute('x', null)
+      rect.setAttribute('y', null)
+      rect.setAttribute('width', null)
+      rect.setAttribute('height', null)
+    }
+  </script>
+</body>
+
+</html>

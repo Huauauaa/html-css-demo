@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <iframe src="" frameborder="0" id="childFrame"></iframe>
+
+  <script>
+    const iframe = document.getElementById("childFrame").contentWindow;//获取的是contentWindow 并非是iframe元素对象
+    var childDomain = "http://127.0.0.1:65494/"; //子页面地址
+    var msgstr = 'CHANGE_THEME:light';
+    //动态设置iframe的src地址
+    document.getElementById("childFrame").src = childDomain;
+    //注意：一定要在页面加载完成后才进行发送
+    window.onload = function () {
+      iframe.postMessage(msgstr, childDomain);//使用postMessage进行通信
+    }
+
+    //接收子页面返回的信息
+    window.addEventListener('message', function (obj) {
+      console.log('获取子页面返回值')
+      console.log(obj.data);//打印接收到的数据
+    })
+  </script>
+</body>
+
+</html>
