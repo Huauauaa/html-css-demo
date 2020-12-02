@@ -2,7 +2,7 @@
   border: 1px solid #0f0;
 }
 .element-type-badge-A.active::after {
-  content: "A";
+  content: 'A';
   background-color: #ccc;
   position: absolute;
   top: 0;

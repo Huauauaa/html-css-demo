@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Columns absolute</title>
+  </head>
+  <style>
+    /* 利用绝对定位的方式，左右两栏设置为绝对定位，中间设置对应方向大小的margin的值 */
+    .outer {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+    }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three Columns absolute</title>
-</head>
-<style>
-  /* 利用绝对定位的方式，左右两栏设置为绝对定位，中间设置对应方向大小的margin的值 */
-  .outer {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-  }
+    .left {
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      background-color: antiquewhite;
+    }
 
-  .left {
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    background-color: antiquewhite;
-  }
+    .center {
+      margin: 0 200px 0 100px;
+      width: calc(100% - 100px - 200px);
+      height: 100%;
+      background-color: aqua;
+    }
 
-  .center {
-    margin: 0 200px 0 100px;
-    width: calc(100% - 100px - 200px);
-    height: 100%;
-    background-color: aqua;
-  }
+    .right {
+      position: absolute;
+      width: 200px;
+      height: 100%;
+      background-color: brown;
+      right: 0;
+      top: 0;
+    }
+  </style>
 
-  .right {
-    position: absolute;
-    width: 200px;
-    height: 100%;
-    background-color: brown;
-    right: 0;
-    top: 0;
-  }
-</style>
-
-<body>
-  <div class="outer">
-    <div class="left"></div>
-    <div class="center"></div>
-    <div class="right"></div>
-  </div>
-</body>
-
+  <body>
+    <div class="outer">
+      <div class="left"></div>
+      <div class="center"></div>
+      <div class="right"></div>
+    </div>
+  </body>
 </html>

@@ -1,5 +1,5 @@
-@import "colors";
-@import "color";
+@import 'colors';
+@import 'color';
 
 @mixin large-text {
   font: {
@@ -9,7 +9,6 @@
   }
   color: #ff0000;
 }
-
 
 .foo {
   font-size: 10px;

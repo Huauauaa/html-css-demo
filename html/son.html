@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>POST Handler</title>
+    <script type="text/JavaScript">
+      window.addEventListener("message", function( event ) {
+          var data = event.data;
+          console.log(typeof data)
+          var datas = data.split(':');
+          var eventName = datas[0],
+            theme = datas[1];
+            console.log(eventName, theme)
+      }, false);
+    </script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>POST Handler</title>
-  <script type="text/JavaScript">
-            window.addEventListener("message", function( event ) {
-                var data = event.data;
-                console.log(typeof data)
-                var datas = data.split(':');
-                var eventName = datas[0],
-                  theme = datas[1];
-                  console.log(eventName, theme)
-            }, false);
-        </script>
-</head>
-
-<body>
-  POST
-</body>
-
+  <body>
+    POST
+  </body>
 </html>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lint": "yarn prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "homepage": "https://github.com/Huauauaa/html-css-demo#readme",
   "dependencies": {
     "less": "^3.11.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }

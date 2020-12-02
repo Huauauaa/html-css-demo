@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!-- <img id="img" src="./test.jpg" width="200"> -->
-  <img id="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585578948887&di=ca6c5885403d812466fa80d1ea7d4226&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F78%2F52%2F01200000123847134434529793168.jpg" width="200">
-  <p>something</p>
-  <button id="btn1" onclick="copyCanvas()">copy canvas</button>
-  <button id="btn2" onclick="copyImg()">copy img</button>
-  <canvas id="canvas" width="150" height="150"></canvas>
-  <script>
-    function draw() {
-      var canvas = document.getElementById('canvas');
-      if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-        ctx.fillRect(25, 25, 100, 100);
-        ctx.clearRect(45, 45, 60, 60);
-        ctx.strokeRect(50, 50, 50, 50);
+  <body>
+    <!-- <img id="img" src="./test.jpg" width="200"> -->
+    <img
+      id="img"
+      src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585578948887&di=ca6c5885403d812466fa80d1ea7d4226&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F78%2F52%2F01200000123847134434529793168.jpg"
+      width="200"
+    />
+    <p>something</p>
+    <button id="btn1" onclick="copyCanvas()">copy canvas</button>
+    <button id="btn2" onclick="copyImg()">copy img</button>
+    <canvas id="canvas" width="150" height="150"></canvas>
+    <script>
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+
+          ctx.fillRect(25, 25, 100, 100);
+          ctx.clearRect(45, 45, 60, 60);
+          ctx.strokeRect(50, 50, 50, 50);
+        }
       }
-    }
-    draw();
+      draw();
 
-    function copyImg() {
-      let img = document.querySelector('#img');
-      img.setAttribute('contentEditable', true);
-      const selection = window.getSelection();
-      const range = document.createRange();
-      range.setStartBefore(img);
-      range.setEndAfter(img);
-      range.selectNode(img);
-      selection.removeAllRanges();
-      selection.addRange(range);
-      const result = document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-      console.log(result)
-    }
+      function copyImg() {
+        let img = document.querySelector('#img');
+        img.setAttribute('contentEditable', true);
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.setStartBefore(img);
+        range.setEndAfter(img);
+        range.selectNode(img);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        const result = document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        console.log(result);
+      }
 
-    function copyCanvas() {
-      var canvas = document.getElementById('canvas');
-      canvas.toBlob(async (blob) => {
+      function copyCanvas() {
+        var canvas = document.getElementById('canvas');
+        canvas.toBlob(async (blob) => {
           const item = new ClipboardItem({ 'image/png': blob });
-          console.log(item)
+          console.log(item);
         });
-      const imgUrl = canvas.toDataURL("image/png");
-      let img = document.createElement('img');
-      // img.crossOrigin = "anonymous";
-      img.src = imgUrl;
-      document.body.appendChild(img);
-      console.log(img);
-      img.setAttribute('contentEditable', true);
-      const selection = window.getSelection();
-      const range = document.createRange();
-      // range.setStartBefore(img);
-      // range.setEndAfter(img);
-      range.selectNode(img);
-      selection.removeAllRanges();
-      console.log(range)
-      selection.addRange(range);
-      console.log(selection)
-      // document.designMode = 'on';
-      const result = document.execCommand('copy');
-      // var MIME_TYPE = "image/png";
-      // var dlLink = document.createElement('a');
-      // dlLink.download = 'foo.png';
-      // dlLink.href = imgUrl;
-      // // dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-      // document.body.appendChild(dlLink);
-      // dlLink.click();
-      // document.body.removeChild(dlLink);
+        const imgUrl = canvas.toDataURL('image/png');
+        let img = document.createElement('img');
+        // img.crossOrigin = "anonymous";
+        img.src = imgUrl;
+        document.body.appendChild(img);
+        console.log(img);
+        img.setAttribute('contentEditable', true);
+        const selection = window.getSelection();
+        const range = document.createRange();
+        // range.setStartBefore(img);
+        // range.setEndAfter(img);
+        range.selectNode(img);
+        selection.removeAllRanges();
+        console.log(range);
+        selection.addRange(range);
+        console.log(selection);
+        // document.designMode = 'on';
+        const result = document.execCommand('copy');
+        // var MIME_TYPE = "image/png";
+        // var dlLink = document.createElement('a');
+        // dlLink.download = 'foo.png';
+        // dlLink.href = imgUrl;
+        // // dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+        // document.body.appendChild(dlLink);
+        // dlLink.click();
+        // document.body.removeChild(dlLink);
 
-
-
-      window.getSelection().removeAllRanges();
-      document.body.removeChild(img);
-      console.log(result)
-    }
-  </script>
+        window.getSelection().removeAllRanges();
+        document.body.removeChild(img);
+        console.log(result);
+      }
+    </script>
+  </body>
 </html>

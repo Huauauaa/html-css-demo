@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Columns flex</title>
+  </head>
+  <style>
+    /* 利用flex布局的方式，左右两栏的放大和缩小比例都设置为0，基础大小设置为固定的大小，中间一栏设置为auto */
+    .outer {
+      display: flex;
+      height: 100vh;
+    }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three Columns flex</title>
-</head>
-<style>
-  /* 利用flex布局的方式，左右两栏的放大和缩小比例都设置为0，基础大小设置为固定的大小，中间一栏设置为auto */
-  .outer {
-    display: flex;
-    height: 100vh;
-  }
+    .left {
+      flex: 0 0 100px;
+      background-color: antiquewhite;
+    }
 
-  .left {
-    flex: 0 0 100px;
-    background-color: antiquewhite;
-  }
+    .center {
+      flex: auto;
+      background-color: aqua;
+    }
 
-  .center {
-    flex: auto;
-    background-color: aqua;
-  }
+    .right {
+      flex: 0 0 100px;
+      background-color: brown;
+    }
+  </style>
 
-  .right {
-    flex: 0 0 100px;
-    background-color: brown;
-  }
-</style>
-
-<body>
-  <div class="outer">
-    <div class="left"></div>
-    <div class="center"></div>
-    <div class="right"></div>
-  </div>
-</body>
-
+  <body>
+    <div class="outer">
+      <div class="left"></div>
+      <div class="center"></div>
+      <div class="right"></div>
+    </div>
+  </body>
 </html>

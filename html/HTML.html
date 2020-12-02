@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      const htmlString = `<p style="font-size:19px;text-align:left;text-indent:0px;margin-left:0px">〇〇〇〇股份有限公司</p>`;
 
-<body>
-  <script>
-    const htmlString = `<p style="font-size:19px;text-align:left;text-indent:0px;margin-left:0px">〇〇〇〇股份有限公司</p>`;
+      // const myRe = new RegExp("(?<=\>).*?(?=\<)", "g");
+      // var myArray = /(?<=\>).*?(?=\<)/g.exec(htmlString);
+      // var myArray = myRe.exec(`htmlString`);
+      // console.log(myArray)
 
-    // const myRe = new RegExp("(?<=\>).*?(?=\<)", "g");
-    // var myArray = /(?<=\>).*?(?=\<)/g.exec(htmlString);
-    // var myArray = myRe.exec(`htmlString`);
-    // console.log(myArray)
-
-    const divDOM = document.createElement('DIV');
-    divDOM.innerHTML = htmlString.trim();
-    console.log(divDOM.children[0].style)
-  </script>
-</body>
-
+      const divDOM = document.createElement('DIV');
+      divDOM.innerHTML = htmlString.trim();
+      console.log(divDOM.children[0].style);
+    </script>
+  </body>
 </html>

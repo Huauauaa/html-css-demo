@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web component demo</title>
+    <style>
+      p {
+        color: lightblue;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>web component demo</title>
-  <style>
-    p {
-      color: lightblue
-    }
-  </style>
-</head>
-
-<body>
-  <p>Web Components</p>
-  <hello-world name="Huauauaa">
-    <div slot="email">harvey@gmail.com</div>
-    <div slot="phone">555-555-5555</div>
-  </hello-world>
-  <script>
-    const template = document.createElement('template');
-    template.innerHTML = `
+  <body>
+    <p>Web Components</p>
+    <hello-world name="Huauauaa">
+      <div slot="email">harvey@gmail.com</div>
+      <div slot="phone">555-555-5555</div>
+    </hello-world>
+    <script>
+      const template = document.createElement('template');
+      template.innerHTML = `
       <style>
         .user-card {
           font-family: 'Arial', sans-serif;
@@ -59,52 +58,54 @@
   </div>
     `;
 
-    async function getUserInfo() {
-      return await fetch('https://api.github.com/users/huauauaa').then(response => response.json())
-    }
-
-    class HelloWorld extends HTMLElement {
-      constructor() {
-        super()
-
-        this.attachShadow({ mode: 'open' });
-
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-
-        this.name = this.getAttribute('name')
-
+      async function getUserInfo() {
+        return await fetch(
+          'https://api.github.com/users/huauauaa',
+        ).then((response) => response.json());
       }
 
-      toggleInfo() {
-        this.showInfo = !this.showInfo;
+      class HelloWorld extends HTMLElement {
+        constructor() {
+          super();
 
-        const info = this.shadowRoot.querySelector('.info');
-        const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
+          this.attachShadow({ mode: 'open' });
 
-        if (this.showInfo) {
-          info.style.display = 'block';
-          toggleBtn.innerText = 'Hide Info';
-        } else {
-          info.style.display = 'none';
-          toggleBtn.innerText = 'Show Info';
+          this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+          this.name = this.getAttribute('name');
+        }
+
+        toggleInfo() {
+          this.showInfo = !this.showInfo;
+
+          const info = this.shadowRoot.querySelector('.info');
+          const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
+
+          if (this.showInfo) {
+            info.style.display = 'block';
+            toggleBtn.innerText = 'Hide Info';
+          } else {
+            info.style.display = 'none';
+            toggleBtn.innerText = 'Show Info';
+          }
+        }
+
+        async connectedCallback() {
+          const userInfo = await getUserInfo(this.name);
+
+          this.shadowRoot.querySelector('.name').innerText = userInfo.name;
+          this.shadowRoot.querySelector('.avatar').src = userInfo.avatar_url;
+
+          this.shadowRoot
+            .querySelector('#toggle-info')
+            .addEventListener('click', () => this.toggleInfo());
+        }
+
+        disconnectedCallback() {
+          this.shadowRoot.querySelector('#toggle-info').removeEventListener();
         }
       }
-
-      async connectedCallback() {
-        const userInfo = await getUserInfo(this.name)
-
-        this.shadowRoot.querySelector('.name').innerText = userInfo.name;
-        this.shadowRoot.querySelector('.avatar').src = userInfo.avatar_url;
-
-        this.shadowRoot.querySelector('#toggle-info').addEventListener('click', () => this.toggleInfo());
-      }
-
-      disconnectedCallback() {
-        this.shadowRoot.querySelector('#toggle-info').removeEventListener();
-      }
-    }
-    customElements.define('hello-world', HelloWorld);
-  </script>
-</body>
-
+      customElements.define('hello-world', HelloWorld);
+    </script>
+  </body>
 </html>
