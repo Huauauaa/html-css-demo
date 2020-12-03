@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节流-防抖</title>
+  </head>
+  <body>
+    <button onclick="onClick()">Click</button>
+    <button onclick="onThrottleClick()">Throttle Click</button>
+    <button onclick="onDebounceClick()">Debounce Click</button>
+    <div class="text"></div>
+    <script>
+      const onClick = handleClick;
+      const onThrottleClick = throttle(handleClick, 2e3);
+      const onDebounceClick = debounce(handleClick, 2e3);
+
+      function handleClick() {
+        console.log('handleClick');
+        document.querySelector('.text').innerHTML += '*';
+      }
+
+      function debounce(fn, wait) {
+        var timer = null;
+        return function () {
+          const context = this;
+          const args = arguments;
+          if (timer) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            fn.apply(context, args);
+          }, wait);
+        };
+      }
+
+      function throttle(fn, wait) {
+        var timer = null;
+        return function () {
+          const context = this;
+          const args = arguments;
+          if (!timer) {
+            timer = setTimeout(() => {
+              timer = null;
+              fn.apply(context, args);
+            }, wait);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
