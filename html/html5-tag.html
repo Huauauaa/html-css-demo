@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5 Tag</title>
   </head>
+
   <body>
     <del>These content are deleted</del>
     <ins>something inset</ins>
@@ -15,9 +16,24 @@
       <summary>Details</summary>
       Something small enough to escape casual notice.
     </details>
-    <video controls src="./assets/demo.mp4" width="400" height="300">
+    <video controls src="./assets/demo.mp4" width="400" height="300" id="video">
       <track default kind="subtitles" srclang="zh" src="./assets/demo.vtt" />
       Sorry, your browser doesn't support embedded videos.
     </video>
+    <button onclick="screenShot()">截图</button>
+    <script>
+      function screenShot() {
+        const video = document.getElementById('video');
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        ctx.drawImage(video, 0, 0);
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = `${Date.now()}`;
+        a.click();
+      }
+    </script>
   </body>
 </html>
