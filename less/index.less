@@ -1,24 +1,28 @@
-@title: 'a';
-// @title: '';
-
-// #title {
-//   & when (@title = '') {
-//     display: none;
+// .generate-columns(@n, @i: 1) when (@i =< @n) {
+//   &.indent-@{i} {
+//     text-indent: (@i * 1em);
 //   }
-
-//   span::after {
-//     content: @title;
+//   .generate-columns(@n, (@i + 1));
+// }
+// .foo {
+//   .generate-columns(4);
+//   .bar {
+//     color: red;
 //   }
 // }
 
-#label() {
-  span::after {
-    content: @title;
+.loop(@counter) when (@counter > 0) {
+  .loop((@counter - 1)); // next iteration
+  width: (10px * @counter); // code for each iteration
+}
+
+.foo(@n) {
+  width: @n * 1px;
+  &.width-@{n} {
+    width: @n * 1px;
   }
 }
-#hide() {
-  display: none;
-}
-#title() {
-  // if(@title, #label(), #hide())
+
+div {
+  .foo(100);
 }
