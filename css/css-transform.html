@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform</title>
+    <style>
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(90deg);
+        }
+      }
+      @keyframes rotateX {
+        from {
+          transform: rotateX(0turn);
+        }
+
+        to {
+          transform: rotateX(1turn);
+        }
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+      }
+      .box1 {
+        display: inline-block;
+        transform: rotate(60deg);
+      }
+      .box2 {
+        display: inline-block;
+        transform: rotate(0.3turn);
+      }
+      .box3 {
+        display: inline-block;
+        border-radius: 50px;
+        animation: rotate infinite 1s linear;
+      }
+      .box4 {
+        display: inline-block;
+        border-radius: 50px;
+        animation: rotateX infinite 1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box"></div>
+  </body>
+</html>
