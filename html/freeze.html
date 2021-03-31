@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        aaa: {
+          name: 'aaa',
+        },
+        bbb: {
+          name: 'bbb',
+        },
+        ccc: {
+          name: 'ccc',
+        },
+      };
+      const freezeObj = Object.freeze(obj);
+      console.log(freezeObj);
+      // add
+      obj.ddd = { name: 'ddd' };
+      console.log('add ddd ', freezeObj, freezeObj.ddd);
+      delete obj.ccc;
+      console.log('delete ccc', freezeObj, obj.ccc);
+      obj.ccc.id = 1;
+      console.log('update ccc id 1', freezeObj, obj.ccc.id);
+      obj.ccc = {
+        name: 'c',
+      };
+      console.log('update ccc name to c', freezeObj, freezeObj.ccc.name);
+
+      const arr = [{ name: 'xxx' }, { name: 'yyy' }, { name: 'zzz' }];
+      const res = arr.map((item) => ({ [item.name]: item }));
+      console.log(...res);
+    </script>
+  </body>
+</html>
