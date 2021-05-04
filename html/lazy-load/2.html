@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      p {
+      .img-wrapper {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+      }
+      .imgs {
         margin-top: 1000px;
       }
     </style>
   </head>
   <body>
-    <p>img list</p>
-    <img data-src="../assets/ships.jpg" alt="ships" />
-    <img data-src="../assets/beach.jpg" alt="beach" />
-    <img data-src="../assets/leaves.png" alt="leaves" />
+    <div class="img-wrapper"></div>
+    <div class="imgs">
+      <img data-src="../assets/ships.jpg" alt="ships" />
+      <img data-src="../assets/beach.jpg" alt="beach" />
+      <img data-src="../assets/leaves.png" alt="leaves" />
+    </div>
 
     <script>
       const observer = new IntersectionObserver((changes) => {
-        console.log(changes);
         // changes: 目标元素集合
         changes.forEach((change) => {
+          console.log(change);
           // intersectionRatio
           if (change.isIntersecting) {
             const img = change.target;
@@ -31,7 +38,7 @@
         });
       });
 
-      const imgs = document.querySelectorAll("img");
+      const imgs = document.querySelectorAll('img');
 
       Array.from(imgs).forEach((img) => {
         observer.observe(img);
